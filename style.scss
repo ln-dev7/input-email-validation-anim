@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  color: #09090b;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background: #fafafa;
+}
+
+.codebyln{
+  position: absolute;
+  top: 20px;
+  text-decoration: underline;
+  color: #0a0a0a;
+  font-weight: 500;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.container {
+  width: 500px;
+  max-width: 90%;
+  margin: 0 20px;
+  &-input {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 20px 0;
+    label {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+    input {
+      width: 100%;
+      border: 2px solid #e4e4e7;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      outline: none;
+      font-weight: 500;
+      font-size: 1rem;
+      &:focus {
+        border-color: #d4d4d8;
+      }
+
+      &.error {
+        border: 2px solid #ef4444;
+      }
+
+      &.done {
+        border: 3px solid #22c55e;
+      }
+    }
+  }
+
+  &-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 56px;
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      //position: absolute;
+      background: #0f172a;
+      border: none;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      width: 250px;
+      height: 56px;
+      transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease,
+        background 0.3s ease;
+      span {
+        color: #fff;
+        font-size: 16px;
+        font-weight: 600;
+        transition: 0.3s ease;
+      }
+      .send {
+        position: absolute;
+        left: 20px;
+        transform: rotate(45deg);
+        width: 20px;
+        opacity: 0;
+        transition: 0.3s;
+      }
+    }
+    button.correct {
+      background: #4f46e5;
+      transform: translate(0) !important;
+      position: relative !important;
+      left: 0 !important;
+      top: 0 !important;
+      cursor: pointer;
+      width: 486px !important;
+      height: 56px !important;
+      border-radius: 0.5rem !important;
+      opacity: 1;
+      .send {
+        opacity: 1;
+      }
+      &:hover {
+        span {
+          opacity: 0;
+        }
+        .send {
+          left: 90%;
+        }
+      }
+    }
+  }
+}
